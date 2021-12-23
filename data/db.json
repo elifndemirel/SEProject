@@ -1,0 +1,57 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "firstName": "Emmitt",
+            "lastName": "Walker",
+            "city": "Roseville",
+            "email": "emmitt@email.com",
+            "password": "emmitt"
+        },
+        {
+            "id": 2,
+            "firstName": "Luis",
+            "lastName": "Puga",
+            "city": "Lorenashire",
+            "email": "luis@email.com",
+            "password": "luis"
+        }
+    ],
+    "books": [
+        {
+            "id": 1,
+            "author": "F. Scott Fitzgerald",
+            "title": "The Great Gatsby",
+            "cover": "https://www.gutenberg.org/cache/epub/64317/pg64317.cover.medium.jpg",
+            "url": "https://www.gutenberg.org/cache/epub/64317/pg64317-images.html"
+        },
+        {
+            "id": 2,
+            "author": "Jane Austen",
+            "title": "Pride and Prejudice",
+            "cover": "https://www.gutenberg.org/cache/epub/1342/pg1342.cover.medium.jpg",
+            "url": "https://www.gutenberg.org/cache/epub/1342/pg1342-images.html"
+        },
+        {
+            "id": 3,
+            "author": "Fyodor Dostoyevsky",
+            "title": "The Brothers Karamazov",
+            "cover": "https://www.gutenberg.org/cache/epub/28054/pg28054.cover.medium.jpg",
+            "url": "https://www.gutenberg.org/cache/epub/28054/pg28054-images.html"
+        },
+        {
+            "id": 4,
+            "author": "Arthur Conan Doyle",
+            "title": "The Adventures of Sherlock Holmes",
+            "cover": "https://www.gutenberg.org/cache/epub/1661/pg1661.cover.medium.jpg",
+            "url": "https://www.gutenberg.org/cache/epub/1661/pg1661-images.html"
+        },
+        {
+            "id": 5,
+            "author": "J. M. Barrie",
+            "title": "Peter Pan",
+            "cover": "https://www.gutenberg.org/cache/epub/16/pg16.cover.medium.jpg",
+            "url": "https://www.gutenberg.org/cache/epub/16/pg16-images.html"
+        }
+    ]
+}
