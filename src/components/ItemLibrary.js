@@ -59,9 +59,9 @@ const ItemLibrary = ({ book }) => {
           </a>{" "}
           <div style={{ float: "right" }} onClick={toggle}>
             {isLiked === false ? (
-              <img src={dislike} alt="" style={{ width: "30px" }}></img>
+              <img src={dislike} alt="" /*onClick={buraya fonks.}*/ style={{ width: "30px" }}></img>
             ) : (
-              <img src={like} alt="" style={{ width: "30px" }}></img>
+              <img src={like} alt="" /*onClick={buraya fonks. }*/ style={{ width: "30px" }}></img>
             )}
           </div>
         </CardFooter>

@@ -6,6 +6,9 @@ export default class Favorites extends Component {
         return (
             <div>
                 <NavBar/>
+                    <div>
+
+                    </div>
             </div>
         )
     }
