@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import ItemLibrary from "../components/ItemLibrary";
+import Pagination from "../components/Pagination";
 import { Container, Row } from "reactstrap";
 
 const Home = ({ books }) => {
@@ -23,19 +24,22 @@ const Home = ({ books }) => {
       </div>
       <Container>
         <Row className="d-flex justify-content-center">
-          {books
+          {/* {books
             .filter((book) => {
               if (filteredData === "") {
                 return book;
               } else if (
-                book.title.toLowerCase().includes(filteredData.toLowerCase())
+                book.name.toLowerCase().includes(filteredData.toLowerCase())
               ) {
                 return book;
               }
-            })
-            .map((book, index) => (
-              <ItemLibrary key={index} book={book} />
-            ))}
+            })} */}
+          <Pagination
+            data={books}
+            RenderComponent={ItemLibrary}
+            pageLimit={5}
+            dataLimit={12}
+          />
         </Row>
       </Container>
     </div>

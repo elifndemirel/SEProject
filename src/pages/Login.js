@@ -6,7 +6,7 @@ import alertify from "alertifyjs";
 import { Form, FormGroup, Input, Button } from "reactstrap";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
@@ -14,12 +14,13 @@ const Login = () => {
   const handleLogin = () => {
     axios
       .get(
-        "http://localhost:3000/users?email=" + email + "&password=" + password
+        "http://localhost:3000/users?username=" + username + "&password=" + password
       )
       .then((response) => {
         console.log("response >>>", response);
         if (response.data.length > 0) {
           alertify.success("Login Successful!");
+          sessionStorage.setItem("userId", response.id);
           navigate("/home");
         } else {
           alertify.error("Login Failed!");
@@ -53,11 +54,11 @@ const Login = () => {
               <FormGroup>
                 <Input
                   name="email"
-                  placeholder="Email"
+                  placeholder="Username"
                   type="email"
                   required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </FormGroup>
               <FormGroup>

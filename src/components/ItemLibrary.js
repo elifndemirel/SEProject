@@ -30,7 +30,7 @@ const ItemLibrary = ({ book }) => {
           maxWidth: "250px",
         }}
       >
-        {book.formats["image/jpeg"] === undefined ? (
+        {book.imageUrl === undefined ? (
           <CardImg
             alt="cover"
             src={bookCover}
@@ -41,16 +41,16 @@ const ItemLibrary = ({ book }) => {
         ) : (
           <CardImg
             alt="cover"
-            src={book.formats["image/jpeg"]}
+            src={book.imageUrl}
             top
             width="100%"
             style={{ maxHeight: "300px" }}
           />
         )}
         <CardBody>
-          <CardTitle tag="h5">{book.title.slice(0, 60)}</CardTitle>
+          <CardTitle tag="h5">{book.name.slice(0, 60)}</CardTitle>
           <CardSubtitle className="mb-2 text-muted" tag="h6">
-            {/* {book.authors[0].name} */}
+            {book.author}
           </CardSubtitle>
         </CardBody>
         <CardFooter>

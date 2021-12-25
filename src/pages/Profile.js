@@ -19,16 +19,6 @@ const Profile = () => {
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10 col-xl-8 mx-auto">
             <div className="my-4">
-              <div className="text-center mb-5">
-                <div className="avatar avatar-xl">
-                  <img
-                    src="https://bootdey.com/img/Content/avatar/avatar6.png"
-                    alt="..."
-                    className="avatar-img rounded-circle"
-                    width={200}
-                  />
-                </div>
-              </div>
               <form onSubmit={onSubmit}>
                 <hr className="my-4" />
                 <div className="form-row">
@@ -55,6 +45,17 @@ const Profile = () => {
                     />
                   </div>
                   <div className="form-group col-md-6">
+                    <label for="userName" className="mb-2">
+                      Username
+                    </label>
+                    <input
+                      type="email"
+                      className="form-control mb-2"
+                      id="userName"
+                      name="email"
+                    />
+                  </div>
+                  <div className="form-group col-md-6">
                     <label for="city" className="mb-2">
                       City
                     </label>
@@ -65,17 +66,6 @@ const Profile = () => {
                       className="form-control mb-2"
                     />
                   </div>
-                </div>
-                <div className="form-group col-md-6">
-                  <label for="email" className="mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    className="form-control mb-2"
-                    id="email"
-                    name="email"
-                  />
                 </div>
                 <hr className="my-5" />
                 <div className="row mb-4">

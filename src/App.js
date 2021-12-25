@@ -5,24 +5,22 @@ import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import Profile from "./pages/Profile";
 
-const App = () => {
+const url = "http://localhost:3000/data";
+
+function App() {
   const [books, setBooks] = useState([]);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    const getBooks = async () => {
-      const booksFromApi = await fetchBooks();
-      setBooks(booksFromApi);
-    };
-
-    getBooks();
+    fetch(url)
+      .then((response) => {
+        if (response.ok) return response.json();
+        throw new Error("something went wrong");
+      })
+      .then((books) => setBooks(books))
+      .catch((error) => setError(error.message));
   }, []);
-
-  const fetchBooks = async () => {
-    const res = await fetch("https://gutendex.com/books/?page=1");
-    const data = await res.json();
-
-    return data.results;
-  };
+  if (error) return <h1>{error}</h1>;
 
   return (
     <div className="App">
@@ -38,6 +36,6 @@ const App = () => {
       </BrowserRouter>
     </div>
   );
-};
+}
 
 export default App;

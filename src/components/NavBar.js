@@ -45,14 +45,6 @@ const NavBar = () => {
                 </NavLink>
               </NavItem>
             </Nav>
-            <div className="p-2">
-              <img
-                src="https://bootdey.com/img/Content/avatar/avatar6.png"
-                alt="..."
-                className="avatar-img rounded-circle"
-                width={60}
-              />
-            </div>
           </Collapse>
         </Navbar>
         <Nav
