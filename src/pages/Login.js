@@ -39,7 +39,7 @@ const Login = () => {
             <img
               src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
               className="img-fluid"
-              alt="Phone image"
+              alt="Phone"
             />
           </div>
           <div className="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
