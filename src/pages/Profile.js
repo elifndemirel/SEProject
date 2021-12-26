@@ -57,7 +57,7 @@ const Profile = () => {
                       type="text"
                       className="form-control mb-2"
                       id="userName"
-                      name="email"
+                      name="username"
                     />
                   </div>
                   <div className="form-group col-md-6">
