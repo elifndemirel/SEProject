@@ -54,7 +54,7 @@ const Profile = () => {
                       Username
                     </label>
                     <input
-                      type="email"
+                      type="text"
                       className="form-control mb-2"
                       id="userName"
                       name="email"
