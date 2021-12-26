@@ -40,6 +40,11 @@ const NavBar = () => {
                 </NavLink>
               </NavItem>
               <NavItem className="ms-4 mt-2">
+                <NavLink href="/library" style={{ color: "#fcf8ec" }}>
+                  My library
+                </NavLink>
+              </NavItem>
+              <NavItem className="ms-4 mt-2">
                 <NavLink href="/favorites" style={{ color: "#fcf8ec" }}>
                   My favorites
                 </NavLink>
