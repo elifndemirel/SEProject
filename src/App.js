@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import Profile from "./pages/Profile";
+import NotFound from "./pages/NotFound";
 
 const url = "http://localhost:3000/data";
 
@@ -31,6 +32,7 @@ function App() {
             <Route exact path="/home" element={<Home books={books} />} />
             <Route exact path="/profile" element={<Profile />} />
             <Route exact path="/favorites" element={<Favorites />} />
+            <Route exact path="/*" element={<NotFound />} />
           </Routes>
         </div>
       </BrowserRouter>

@@ -23,11 +23,6 @@ const ItemLibrary = ({ book }) => {
         style={{
           borderRadius: "15px",
           flex: "1 1 21rem",
-          display: "flex",
-          flexWrap: "wrap",
-          flexDirection: "column",
-          alignSelf: "normal",
-          maxWidth: "250px",
         }}
       >
         {book.imageUrl === undefined ? (
@@ -36,7 +31,7 @@ const ItemLibrary = ({ book }) => {
             src={bookCover}
             top
             width="100%"
-            style={{ height: "300px" }}
+            style={{ height: "250px" }}
           />
         ) : (
           <CardImg
@@ -44,7 +39,7 @@ const ItemLibrary = ({ book }) => {
             src={book.imageUrl}
             top
             width="100%"
-            style={{ maxHeight: "300px" }}
+            style={{ maxHeight: "250px" }}
           />
         )}
         <CardBody>

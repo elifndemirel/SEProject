@@ -3,10 +3,17 @@ import NavBar from "../components/NavBar";
 import ItemLibrary from "../components/ItemLibrary";
 import Pagination from "../components/Pagination";
 import { Container, Row } from "reactstrap";
+import { Navigate } from "react-router-dom";
 
 const Home = ({ books }) => {
   const [filteredData, setFilteredData] = useState("");
 
+  //If the user is not logged in, redirects to login page
+  if(sessionStorage.getItem("response")!=200){
+    return <Navigate to="/"/>
+  }
+
+  //If the user is logged in, return the home page
   return (
     <div>
       <NavBar />
@@ -23,7 +30,7 @@ const Home = ({ books }) => {
         />
       </div>
       <Container>
-        <Row className="d-flex justify-content-center">
+        <Row>
           {/* {books
             .filter((book) => {
               if (filteredData === "") {

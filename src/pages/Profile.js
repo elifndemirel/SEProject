@@ -1,4 +1,5 @@
 import NavBar from "../components/NavBar";
+import { Navigate } from "react-router-dom";
 
 const Profile = () => {
   const onSubmit = (e) => {
@@ -12,6 +13,10 @@ const Profile = () => {
     console.log(e.target.confirmPassword.value);
   };
 
+  if(sessionStorage.getItem("response")!=200){
+    return <Navigate to="/"/>
+  }
+  
   return (
     <div>
       <NavBar />

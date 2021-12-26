@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import "./Pagination.css";
+import { Container, Row, Col } from "reactstrap";
 export default function Pagination({
   data,
   RenderComponent,
@@ -35,47 +36,63 @@ export default function Pagination({
   return (
     <div>
       {/* show the posts, 10 posts at a time */}
-      <div className="dataContainer">
-        {getPaginatedData().map((d, _) => (
-          <RenderComponent book={d} />
-        ))}
-      </div>
-
-      {/* show the pagiantion
+      <Container>
+        <Row className="d-flex justify-content-center">
+          {getPaginatedData().map((book, _) => (
+            <Col
+              xs="12"
+              sm="4"
+              md="3"
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                flexDirection: "column",
+                alignSelf: "normal",
+                maxWidth: "250px",
+              }}
+            >
+              <RenderComponent book={book} />
+            </Col>
+          ))}
+        </Row>
+        <Row>
+          {/* show the pagiantion
         it consists of next and previous buttons
         along with page numbers, in our case, 5 page
         numbers at a time
     */}
-      <div className="pagination">
-        {/* previous button */}
-        <button
-          onClick={goToPreviousPage}
-          className={`prev ${currentPage === 1 ? "disabled" : ""}`}
-        >
-          prev
-        </button>
+          <div className="pagination mt-5 mb-1">
+            {/* previous button */}
+            <button
+              onClick={goToPreviousPage}
+              className={`prev ${currentPage === 1 ? "disabled" : ""}`}
+            >
+              ❮ prev
+            </button>
 
-        {/* show page numbers */}
-        {getPaginationGroup().map((item, index) => (
-          <button
-            key={index}
-            onClick={changePage}
-            className={`paginationItem ${
-              currentPage === item ? "active" : null
-            }`}
-          >
-            <span>{item}</span>
-          </button>
-        ))}
+            {/* show page numbers */}
+            {getPaginationGroup().map((item, index) => (
+              <button
+                key={index}
+                onClick={changePage}
+                className={`paginationItem ${
+                  currentPage === item ? "active" : null
+                }`}
+              >
+                <span>{item}</span>
+              </button>
+            ))}
 
-        {/* next button */}
-        <button
-          onClick={goToNextPage}
-          className={`next ${currentPage === pages ? "disabled" : ""}`}
-        >
-          next
-        </button>
-      </div>
+            {/* next button */}
+            <button
+              onClick={goToNextPage}
+              className={`next ${currentPage === pages ? "disabled" : ""}`}
+            >
+              next ❯
+            </button>
+          </div>
+        </Row>
+      </Container>
     </div>
   );
 }

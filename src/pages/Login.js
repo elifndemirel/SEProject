@@ -21,6 +21,7 @@ const Login = () => {
         if (response.data.length > 0) {
           alertify.success("Login Successful!");
           sessionStorage.setItem("userId", response.id);
+          sessionStorage.setItem("response", response.status);
           navigate("/home");
         } else {
           alertify.error("Login Failed!");
