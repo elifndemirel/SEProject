@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "alertifyjs/build/css/alertify.css";
 import alertify from "alertifyjs";
-import { Form, FormGroup, Input, Button } from "reactstrap";
+import { Form, FormGroup, Input, Button, Label } from "reactstrap";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -14,7 +14,10 @@ const Login = () => {
   const handleLogin = () => {
     axios
       .get(
-        "http://localhost:3000/users?username=" + username + "&password=" + password
+        "http://localhost:3000/users?username=" +
+          username +
+          "&password=" +
+          password
       )
       .then((response) => {
         console.log("response >>>", response.data[0].id);
@@ -72,6 +75,17 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
+              </FormGroup>
+              <FormGroup>
+                <Label>
+                  <a
+                    style={{ color: "#ededed" }}
+                    className="alert-link"
+                    href="/register"
+                  >
+                    Don't have account yet?
+                  </a>
+                </Label>
               </FormGroup>
               <Button color="primary" onClick={handleLogin}>
                 Sign in
