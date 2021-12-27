@@ -41,6 +41,7 @@ const Profile = () => {
 
     console.log(e.target.firstname.value);
     console.log(e.target.lastname.value);
+    console.log(e.target.username.value);
     console.log(e.target.oldPassword.value);
     console.log(e.target.newPassword.value);
     console.log(e.target.confirmPassword.value);
