@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-import Library from "./pages/Library";
 import Favorites from "./pages/Favorites";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
@@ -33,7 +32,6 @@ function App() {
             <Route exact path="/home" element={<Home books={books} />} />
             <Route exact path="/profile" element={<Profile />} />
             <Route exact path="/favorites" element={<Favorites />} />
-            <Route exact path="/library" element={<Library />} />
             <Route exact path="/*" element={<NotFound />} />
           </Routes>
         </div>
