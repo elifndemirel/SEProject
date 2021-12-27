@@ -31,7 +31,7 @@ const ItemLibrary = ({ book }) => {
             src={bookCover}
             top
             width="100%"
-            style={{ height: "250px" }}
+            style={{ height: "220px" }}
           />
         ) : (
           <CardImg
@@ -39,13 +39,16 @@ const ItemLibrary = ({ book }) => {
             src={book.imageUrl}
             top
             width="100%"
-            style={{ maxHeight: "250px" }}
+            style={{ maxHeight: "220px" }}
           />
         )}
         <CardBody>
           <CardTitle tag="h5">{book.name.slice(0, 60)}</CardTitle>
           <CardSubtitle className="mb-2 text-muted" tag="h6">
             {book.author}
+          </CardSubtitle>
+          <CardSubtitle className="mt-3" style={{ color: "violet" }}>
+            Current page: {book.currentPage}
           </CardSubtitle>
         </CardBody>
         <CardFooter>

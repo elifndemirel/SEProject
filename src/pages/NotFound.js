@@ -15,7 +15,9 @@ export default class NotFound extends Component {
           <Row className="mt-5">
             <Col>
               {" "}
-              <h5>Sorry, the page you're looking for cannot be found</h5>
+              <h5 style={{ color: "maroon" }}>
+                Sorry, the page you're looking for cannot be found
+              </h5>
             </Col>
           </Row>
         </Container>
