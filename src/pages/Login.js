@@ -17,10 +17,10 @@ const Login = () => {
         "http://localhost:3000/users?username=" + username + "&password=" + password
       )
       .then((response) => {
-        console.log("response >>>", response);
+        console.log("response >>>", response.data[0].id);
         if (response.data.length > 0) {
           alertify.success("Login Successful!");
-          sessionStorage.setItem("userId", response.id);
+          sessionStorage.setItem("userId", response.data[0].id);
           sessionStorage.setItem("response", response.status);
           navigate("/home");
         } else {

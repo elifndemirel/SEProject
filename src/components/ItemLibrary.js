@@ -11,10 +11,39 @@ import {
 import bookCover from "../assets/book.png";
 import like from "../assets/like.png";
 import dislike from "../assets/dislike.png";
+import axios from "axios";
+import alertify from "alertifyjs";
+
+
 
 const ItemLibrary = ({ book }) => {
   const [isLiked, setIsLiked] = useState(false);
   const toggle = () => setIsLiked(!isLiked);
+
+  
+  const addToFavorite = () => {
+    let userId = sessionStorage.getItem("userId")
+    axios.post("http://localhost:3000/favorites" , {
+      userId: userId,
+      bookId: book.id
+    })
+    .then(response => {
+      alertify.success(response.data.message)
+    });
+  }
+
+  const deleteFromFavorite = () => {
+    let userId = sessionStorage.getItem("userId")
+    axios.delete("http://localhost:3000/favorites", {
+      userId: userId,
+      bookId: book.id
+    })
+    .then(response => {
+      alertify.success(response.data.message)
+    })
+  }
+
+
   return (
     <React.Fragment>
       <Card
@@ -54,9 +83,9 @@ const ItemLibrary = ({ book }) => {
           </a>{" "}
           <div style={{ float: "right" }} onClick={toggle}>
             {isLiked === false ? (
-              <img src={dislike} alt="" style={{ width: "30px" }}></img>
+              <img src={dislike} alt="" onClick={addToFavorite} className="disliked" id={book.id} style={{ width: "30px" }}></img>
             ) : (
-              <img src={like} alt="" style={{ width: "30px" }}></img>
+              <img src={like} alt="" onClick={deleteFromFavorite} className="liked" id={book.id} style={{ width: "30px" }}></img>
             )}
           </div>
         </CardFooter>
