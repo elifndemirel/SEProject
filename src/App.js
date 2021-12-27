@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
+import Register from "./pages/Register";
 
 const url = "http://localhost:3000/data";
 
@@ -29,6 +30,7 @@ function App() {
         <div className="content">
           <Routes>
             <Route exact path="/" element={<Login />} />
+            <Route exact path="/register" element={<Register />} />
             <Route exact path="/home" element={<Home books={books} />} />
             <Route exact path="/profile" element={<Profile />} />
             <Route exact path="/favorites" element={<Favorites />} />
